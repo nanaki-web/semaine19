@@ -98,7 +98,7 @@ GRANT 'r_wazaaimmogroup_employes'@'localhost' TO 'wazaaimmogroup_employes1'@'loc
 GRANT 'r_wazaaimmogroup_internautes'@'localhost' TO 'wazaaimmogroup_internaute1'@'localhost';
 
 -- attributions des rôles par défaut
-SET DEFAULT ROLE ALL TO 'wazaaimmogroup_dev1'@'localhost' ;
+SET DEFAULT ROLE 'r_wazaaimmogroup_dev'@'localhost' TO 'wazaaimmogroup_dev1'@'localhost' ;
 SET DEFAULT ROLE 'r_wazaaimmogroup_employes'@'localhost' TO 'wazaaimmogroup_employes1'@'localhost';
 SET DEFAULT ROLE 'r_wazaaimmogroup_internautes'@'localhost' TO 'wazaaimmogroup_internaute1'@'localhost';
 
@@ -164,7 +164,7 @@ GRANT SELECT
     ON wazaaimmogroup.v_nbre_vue_an_lou_act
     TO 'r_wazaaimmogroup_internautes'@'localhost';
 
--- autorisations pour les vues pour les utilisateurs internautes
+-- autorisations pour les vues pour les utilisateurs employes
 
 GRANT SELECT
     ON wazaaimmogroup.v_annonces
@@ -227,8 +227,8 @@ GRANT SELECT
     TO 'r_wazaaimmogroup_employes'@'localhost';
 
 -- accorde les privilèges que ces utilisateurs possedent eux-même
-GRANT grant option on wazaimmogroup.* to 'wazaaimmogroup_dev1'@'localhost';
-GRANT grant option on wazaimmogroup.* to 'wazaaimmogroup_employes1'@'localhost';
+-- GRANT grant option on wazaimmogroup.* to 'wazaaimmogroup_dev1'@'localhost';
+-- GRANT grant option on wazaimmogroup.* to 'wazaaimmogroup_employes1'@'localhost';
 
 -- enleve les privilèges à l'utilisateur
 -- REVOKE ALL PRIVILEGES , grant option from 'wazaaimmogroup_internaute1'@'localhost';
